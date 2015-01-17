@@ -1,0 +1,55 @@
+{% extends 'blogjqui/base.html' %}
+{% load staticfiles %}
+		{% block contents%}
+        <!-- Navbar
+        ================================================== -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="http://github.com/addyosmani/jquery-ui-bootstrap">jQuery UI Bootstrap</a>
+                    <div id="first-menu" class="nav-collapse collapse">
+                        <ul class="nav">
+                        {% if menu%}
+                        {% for m in menu%}
+                        <li class="active">
+                            <!-- <a href="javascript:get_second_menu({{ m.id }});">{{ m }}</a> -->
+                            <a href="javascript:void(0)">{{ m }}</a>
+                        </li>
+                        {% endfor %}
+                        {% else %}
+                        <li class="active">
+                                <a href="#">iXiYang</a>
+                            </li>
+                        {% endif %}
+                           
+                        </ul>
+                        <div id="twitter-share" class="pull-right">
+                            <a href="#" class="twitter-share-button" >login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Subhead
+        ================================================== -->
+        <header class="jumbotron subhead" id="overview">
+            <div class="container">
+                <h1>jQuery UI Bootstrap</h1>
+                <p class="lead">A Bootstrap-themed kickstart for jQuery UI widgets (v0.5).</p>
+            </div>
+        </header>
+
+{% endblock %}
+
+{%block footerscript%}
+<script src="{% static "jqui/js/xy-second-menu-show.js" %}"></script>
+{% endblock %}
+</body>
+</html>
